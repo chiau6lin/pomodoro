@@ -1,0 +1,262 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #f04042;
+  font-size: 18px;
+  padding: 50px;
+  font-weight: 100;
+  text-align: center;
+}
+
+h1 {
+  font-size: 70px;
+  color: white;
+  margin: 0;
+  font-weight: 100;
+  font-family: 'Advent Pro',sans-serif;
+  line-height: 70px;
+}
+
+.pomodoro {
+  display: flex;
+  padding: 30px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  box-shadow: 2px 6px 20px #bd1215;
+}
+
+.pomodoro__function {
+  display: flex;
+  justify-content: flex-end;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+}
+
+.clock-countdown {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 100%;
+  background: #f04042;
+  box-shadow: inset 0 0 10px #bd1215;
+  margin-top: 30px;
+/*   border: 1px solid #eee; */
+}
+
+.clock-countdown__task-number {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 12px 0;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+}
+
+.clock-countdown__progress-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* margin-top: 30px; */
+  /* animation: mask 10s linear infinite; */
+}
+
+.clock-countdown__progress-bar:before,
+.clock-countdown__progress-bar:after {
+  content: '';
+  /* position: absolute; */
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  /* remove space between inline-block element */
+  /* margin-right: -4px; */
+  /* border: 5px solid #DAF7A6; */
+  border: 8px solid #fc7678;
+  transform-origin: 100% 50%;
+}
+
+.clock-countdown__progress-bar:before {
+  border-right: none;
+  border-radius: 100% 0 0 100% / 50%;
+  /* animation: rotate 10s linear infinite; */
+}
+
+.clock-countdown__progress-bar:after {
+  border-left: none;
+  border-radius: 0 100% 100% 0 / 50%;
+  /* animation: fade 10s steps(1, end) infinite reverse; */
+}
+
+/* .clock-countdown__display {} */
+
+/* .clock-countdown__function {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  background: #DAF7A6;
+  border-radius: 100%;
+} */
+
+/* .clock-countdown__button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+} */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mask {
+  0% {
+    clip: rect(auto auto auto auto);
+  }
+  100% {
+    clip: rect(0px 300px 300px 150px);
+  }
+}
+
+.clock-countdown__function {
+  margin-top: 30px;
+}
+
+.clock-countdown__btn {
+  background: #f04042;
+  border: none;
+  text-decoration: none;
+  padding: 16px 45px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 44px;
+  margin: 8px;
+  letter-spacing: 2px;
+  transition: all ease-in-out 0.3s;
+  text-transform: uppercase;
+}
+
+.clock-countdown__btn:hover {
+  background: #ffa9a9;
+  color: #e2181a;
+}
+
+.clock-countdown__btn:last-child {
+  background: white;
+  border: 1px solid #f04042;
+  color: #f04042;
+}
+
+.clock-countdown__btn:last-child:hover {
+  border: 1px solid #ffa9a9;
+  background: #ffa9a9;
+  color: #e2181a;
+}
+
+.pomodoro__btn {
+  font-size: 13px;
+  cursor: pointer;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 44px;
+  transition: all ease-in-out 0.3s;
+  margin-right: 6px;
+}
+
+.pomodoro__btn:last-child {
+  margin-right: 0;
+}
+
+.pomodoro__btn--done {
+  background: #68bb59;
+}
+
+.pomodoro__btn--done:hover {
+  background: #1fa51f;
+}
+
+.pomodoro__btn--cancel {
+  background: #a6b1a6;
+}
+
+.pomodoro__btn--cancel:hover {
+  background: #68bb59;
+}
+
+.pomodoro__task-tomatos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#tomato {
+  margin: 6px;
+  height: 30px;
+  width: 30px;
+  background-image: url('../images/tomato.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-name: tomatoshow;
+  animation-duration: 2s;
+}
+
+@keyframes tomatoshow {
+  from {
+    transform: scale(1.5) rotate(0deg);
+  }
+
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.break {
+  border: 8px solid #acdf87;
+  background: #68bb59;
+  box-shadow: inset 0 0 10px #45ac45;
+}

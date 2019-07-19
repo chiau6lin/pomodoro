@@ -5,9 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pomodoro Project</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#2F3BA2">
+
+  <!-- Your styles -->
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Comfortaa&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
+  <main>
+    <div class="pomodoro">
+      <div class="pomodoro__function">
+        <div class="pomodoro__btn pomodoro__btn--done" role="button">I'm done</div>
+        <div class="pomodoro__btn pomodoro__btn--cancel" role="button">Cancel this task</div>
+      </div>
+
+      <!-- clock-countdown -->
+      <div class="clock-countdown">
+        <h2 class="clock-countdown__task-number">#999999</h2>
+        <div class="clock-countdown__display">
+          <!-- <button class="clock-countdown__button clock-countdown__button--pause">||</button> -->
+          <span class="clock-countdown__minutes">0</span>
+          :
+          <span class="clock-countdown__seconds">0</span>
+        </div>
+        <div class="clock-countdown__progress-bar"></div>
+      </div>
+      <!-- /.clock-countdown -->
+
+      <!-- <div class="countdown_container" id="backgroundColor">
+        <div class="countdown_text">
+          <h2>#999999</h2>
+          <h1>
+            <span id="minutes">0</span>
+            :
+            <span id="seconds">0</span>
+          </h1>
+        </div>
+      </div> -->
+      
+      <!-- show task need how many tomatos -->
+      <div class="pomodoro__task-tomatos"></div>
+
+      <div class="clock-countdown__function">
+        <div class="clock-countdown__btn clock-countdown__btn--start" role="button">Start</div>
+        <div class="clock-countdown__btn clock-countdown__btn--stop" role="button">Stop</div>
+      </div>
+    </div>
+  </main>
+
   <script src="./src/js/app.js"></script>
 </body>
 </html>
